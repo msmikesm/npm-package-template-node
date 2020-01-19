@@ -1,0 +1,17 @@
+{
+    "transform": {
+      "^.+\\.(t|j)s?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
+    "moduleFileExtensions": ["ts", "js", "json", "node"],
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+        "**/src/*.{ts,js}",
+        "**/src/**/*.{ts,js}",
+        "!**/node_modules/**",
+        "!**/lib/**"
+    ],
+    "coveragePathIgnorePatterns": ["<rootDir>/lib/", "<rootDir>/node_modules/"],
+    "coverageReporters": ["json-summary", "text"]
+}

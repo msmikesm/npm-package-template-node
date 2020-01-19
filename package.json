@@ -1,0 +1,53 @@
+{
+  "name": "npm-package-template-node",
+  "version": "1.0.0",
+  "description": "Template for node package",
+  "main": "index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "jest --config jest.json",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msmikesm/npm-package-template-node.git"
+  },
+  "keywords": [
+    "template",
+    "node",
+    "npm",
+    "package"
+  ],
+  "author": "Michal S.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msmikesm/npm-package-template-node/issues"
+  },
+  "homepage": "https://github.com/msmikesm/npm-package-template-node#readme",
+  "devDependencies": {
+    "@types/jest": "^24.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.5"
+  }
+}
